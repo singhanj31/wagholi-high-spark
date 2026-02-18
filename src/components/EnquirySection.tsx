@@ -6,11 +6,18 @@ const EnquirySection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate inputs
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const phone = form.phone.trim();
+    if (!name || !email || !phone) return;
+
     const subject = encodeURIComponent("New Enquiry – Wagholi High Street");
     const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nInventory: ${form.inventory}\nMessage: ${form.message}`
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nInventory: ${form.inventory}\nMessage: ${form.message.trim()}`
     );
-    window.open(`mailto:singh31anj@gmail.com?subject=${subject}&body=${body}`);
+    window.location.href = `mailto:singh31anj@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -28,7 +35,7 @@ const EnquirySection = () => {
 
             <div className="space-y-4">
               <a
-                href="tel:7420807577"
+                href="tel:+917420807577"
                 className="flex items-center gap-4 premium-card p-5 group"
               >
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
@@ -36,12 +43,12 @@ const EnquirySection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Call Us</p>
-                  <p className="font-semibold text-foreground">7420807577</p>
+                  <p className="font-semibold text-foreground">+91 7420807577</p>
                 </div>
               </a>
 
               <a
-                href="https://wa.me/918237290784"
+                href="https://wa.me/918237290784?text=Hi%2C%20I%20am%20interested%20in%20Wagholi%20High%20Street.%20Please%20share%20more%20details."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 premium-card p-5 group"
@@ -51,7 +58,7 @@ const EnquirySection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">WhatsApp</p>
-                  <p className="font-semibold text-foreground">8237290784</p>
+                  <p className="font-semibold text-foreground">+91 8237290784</p>
                 </div>
               </a>
             </div>
@@ -65,6 +72,7 @@ const EnquirySection = () => {
                 type="text"
                 placeholder="Full Name"
                 required
+                maxLength={100}
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
@@ -73,6 +81,7 @@ const EnquirySection = () => {
                 type="email"
                 placeholder="Email Address"
                 required
+                maxLength={255}
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
@@ -81,6 +90,7 @@ const EnquirySection = () => {
                 type="tel"
                 placeholder="Phone Number"
                 required
+                maxLength={15}
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
@@ -98,6 +108,7 @@ const EnquirySection = () => {
               <textarea
                 placeholder="Your Message"
                 rows={3}
+                maxLength={1000}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm resize-none"
