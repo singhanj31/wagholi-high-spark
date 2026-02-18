@@ -3,11 +3,11 @@ import { MessageCircle } from "lucide-react";
 const WhatsAppBubble = () => {
   return (
     <a
-      href="https://wa.me/918237290784"
+      href="https://wa.me/918237290784?text=Hi%2C%20I%20am%20interested%20in%20Wagholi%20High%20Street.%20Please%20share%20more%20details."
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-success flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
-      aria-label="WhatsApp"
+      aria-label="Chat on WhatsApp"
     >
       <MessageCircle className="w-7 h-7 text-popover" />
     </a>
