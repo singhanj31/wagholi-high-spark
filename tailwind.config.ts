@@ -79,6 +79,8 @@ export default {
         },
         success: "hsl(var(--success))",
         sold: "hsl(var(--sold))",
+        "warm-beige": "hsl(var(--warm-beige))",
+        "soft-blue": "hsl(var(--soft-blue))",
       },
       borderRadius: {
         lg: "var(--radius)",

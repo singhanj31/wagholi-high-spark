@@ -13,11 +13,10 @@ const amenities = [
 
 const AmenitiesSection = () => (
   <section id="amenities" className="relative overflow-hidden py-20 lg:py-28">
-    {/* Real site background with frosted overlay */}
+    {/* Real site background */}
     <div className="absolute inset-0">
       <img src={gallery4} alt="" className="w-full h-full object-cover" aria-hidden="true" />
-      <div className="absolute inset-0 bg-popover/80 backdrop-blur-sm" />
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/30 via-transparent to-cream/40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-navy/75 to-charcoal/80" />
     </div>
 
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,9 +27,12 @@ const AmenitiesSection = () => (
         transition={{ duration: 0.6 }}
         className="text-center mb-14"
       >
+        <div className="h-1 w-20 mx-auto rounded-full bg-gold mb-6" />
         <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">World-Class Amenities</p>
-        <h2 className="section-heading mb-4">Experience Beyond Business</h2>
-        <p className="section-subheading mx-auto">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-popover tracking-tight mb-4">
+          Experience Beyond Business
+        </h2>
+        <p className="text-lg text-popover/70 max-w-2xl mx-auto">
           A curated suite of amenities that elevate the everyday work experience.
         </p>
       </motion.div>
@@ -43,14 +45,14 @@ const AmenitiesSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{ delay: i * 0.08, duration: 0.5 }}
-            whileHover={{ y: -8, boxShadow: "0 20px 40px -12px rgba(0,0,0,0.15)" }}
-            className="bg-popover/60 backdrop-blur-lg border border-border/50 rounded-2xl p-7 transition-colors duration-300"
+            whileHover={{ y: -8 }}
+            className="bg-popover/10 backdrop-blur-lg border border-popover/20 rounded-2xl p-7 hover:bg-popover/18 transition-all duration-300 group"
           >
-            <div className="w-14 h-14 rounded-xl bg-secondary/80 flex items-center justify-center mb-5">
-              <a.icon className="w-7 h-7 text-navy" />
+            <div className="w-14 h-14 rounded-xl bg-gold/15 flex items-center justify-center mb-5 group-hover:bg-gold/25 transition-colors">
+              <a.icon className="w-7 h-7 text-gold" />
             </div>
-            <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{a.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{a.desc}</p>
+            <h3 className="text-lg font-heading font-semibold text-popover mb-2">{a.title}</h3>
+            <p className="text-sm text-popover/65 leading-relaxed">{a.desc}</p>
           </motion.div>
         ))}
       </div>

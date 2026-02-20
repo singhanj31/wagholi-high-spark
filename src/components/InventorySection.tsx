@@ -26,9 +26,13 @@ const InventorySection = () => {
   const filtered = active === "All" ? units : units.filter((u) => u.type === active);
 
   return (
-    <section id="inventory" className="section-padding bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="inventory" className="section-padding relative overflow-hidden">
+      {/* Background accent */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream-dark/50 via-background to-cream/80" />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-10">
+          <div className="section-divider mb-6" />
           <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">Availability</p>
           <h2 className="section-heading mb-4">Explore Available Spaces</h2>
           <p className="section-subheading mx-auto">Units ranging from 130 – 386+ sq.ft across all categories.</p>
@@ -48,12 +52,15 @@ const InventorySection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((unit) => (
-            <div key={unit.name} className="premium-card p-6 relative">
+            <div key={unit.name} className="bg-popover rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 p-6 relative overflow-hidden group">
+              {/* Colored top accent */}
+              <div className={`absolute top-0 left-0 right-0 h-1 ${unit.status === "Available" ? "bg-gradient-to-r from-success to-success/50" : "bg-gradient-to-r from-sold to-sold/50"}`} />
+
               {/* Status badge */}
               <span
-                className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${
+                className={`absolute top-5 right-4 px-3 py-1 rounded-full text-xs font-semibold ${
                   unit.status === "Available"
-                    ? "bg-success/10 text-success"
+                    ? "bg-success/15 text-success border border-success/20"
                     : "bg-muted text-sold"
                 }`}
               >
