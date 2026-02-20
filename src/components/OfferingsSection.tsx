@@ -1,5 +1,11 @@
-import gallery3 from "@/assets/gallery-3.jpeg";
+import { motion } from "framer-motion";
 import { Shirt, UtensilsCrossed, Stethoscope, Heart, Dumbbell, Palette, Briefcase } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const offerings = [
   { icon: Shirt, title: "Fashion & Lifestyle", desc: "Curate the perfect retail experience in a premium setting." },
@@ -13,14 +19,8 @@ const offerings = [
 
 const OfferingsSection = () => {
   return (
-    <section id="offerings" className="relative overflow-hidden py-20 lg:py-28">
-      {/* Background image with soft overlay */}
-      <div className="absolute inset-0">
-        <img src={gallery3} alt="" className="w-full h-full object-cover" aria-hidden="true" />
-        <div className="absolute inset-0 bg-gradient-to-br from-popover/92 via-popover/88 to-cream/90" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="offerings" className="section-padding premium-bg-soft">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-14">
           <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">
             Commercial Spaces
@@ -31,28 +31,36 @@ const OfferingsSection = () => {
           </p>
         </div>
 
-        {/* Horizontal scrolling bands */}
-        <div className="space-y-4">
-          {offerings.map((item) => (
-            <div
-              key={item.title}
-              className="group relative rounded-2xl overflow-hidden bg-popover/60 backdrop-blur-lg border border-border/60 hover:border-gold/30 transition-all duration-500 hover:shadow-xl hover:-translate-y-0.5"
-            >
-              <div className="flex items-center gap-6 px-6 py-6 sm:px-8 sm:py-7">
-                <div className="w-14 h-14 rounded-xl bg-secondary/80 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/15 transition-colors duration-300">
-                  <item.icon className="w-7 h-7 text-navy group-hover:text-gold transition-colors duration-300" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-heading font-semibold text-foreground mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>
-                <div className="hidden sm:block w-24 h-1 rounded-full bg-gradient-to-r from-gold/40 to-transparent group-hover:from-gold/70 transition-all duration-500" />
-              </div>
-            </div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <Accordion type="single" collapsible className="space-y-3">
+            {offerings.map((item, i) => (
+              <AccordionItem
+                key={item.title}
+                value={`item-${i}`}
+                className="premium-card px-6 py-1 border rounded-xl overflow-hidden"
+              >
+                <AccordionTrigger className="hover:no-underline gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-secondary/80 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 text-navy" />
+                    </div>
+                    <span className="text-base font-heading font-semibold text-foreground text-left">
+                      {item.title}
+                    </span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pl-[60px] text-muted-foreground leading-relaxed">
+                  {item.desc}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </motion.div>
       </div>
     </section>
   );
