@@ -1,6 +1,5 @@
 import { useState } from "react";
 import gsLogo from "@/assets/gs-group-logo.png";
-import whsLogo from "@/assets/whs-logo.webp";
 import { Phone, Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -10,6 +9,7 @@ const navLinks = [
   { label: "Inventory", href: "#inventory" },
   { label: "Amenities", href: "#amenities" },
   { label: "Gallery", href: "#gallery" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#enquiry" },
 ];
 
@@ -47,7 +47,6 @@ const Navbar = () => {
               <Phone className="w-4 h-4" />
               <span>7420807577</span>
             </a>
-            <img src={whsLogo} alt="Wagholi High Street" className="h-10 sm:h-12 w-auto" />
             <button
               onClick={() => setOpen(!open)}
               className="lg:hidden p-2 text-foreground"

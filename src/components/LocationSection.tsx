@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { MapPin, Train, Route, Building, Globe, Landmark } from "lucide-react";
 
 const connectivityItems = [
@@ -8,6 +9,15 @@ const connectivityItems = [
   { icon: Building, label: "EON IT Park", desc: "IT hub nearby" },
   { icon: Globe, label: "World Trade Center", desc: "WTC Pune access" },
 ];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const },
+  }),
+};
 
 const LocationSection = () => {
   return (
@@ -27,7 +37,13 @@ const LocationSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Map */}
-          <div className="rounded-2xl overflow-hidden shadow-lg border border-border h-[400px]">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="rounded-2xl overflow-hidden shadow-lg border border-border h-[400px]"
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.5!2d73.98!3d18.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM0JzQ4LjAiTiA3M8KwNTgnNDguMCJF!5e0!3m2!1sen!2sin!4v1234567890"
               width="100%"
@@ -38,18 +54,27 @@ const LocationSection = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Wagholi High Street Location"
             />
-          </div>
+          </motion.div>
 
           {/* Connectivity Grid */}
           <div className="grid grid-cols-2 gap-4">
-            {connectivityItems.map((item) => (
-              <div key={item.label} className="premium-card p-5">
+            {connectivityItems.map((item, i) => (
+              <motion.div
+                key={item.label}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-30px" }}
+                variants={cardVariants}
+                whileHover={{ y: -6, boxShadow: "0 12px 30px -8px rgba(0,0,0,0.12)" }}
+                className="premium-card p-5 cursor-default"
+              >
                 <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center mb-3">
                   <item.icon className="w-5 h-5 text-navy" />
                 </div>
                 <h3 className="font-semibold text-foreground text-sm mb-1">{item.label}</h3>
                 <p className="text-xs text-muted-foreground">{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
