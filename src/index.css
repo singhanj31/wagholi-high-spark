@@ -15,24 +15,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 18%;
 
-    --primary: 215 45% 22%;
+    --primary: 215 55% 24%;
     --primary-foreground: 40 20% 97%;
 
-    --secondary: 40 30% 92%;
+    --secondary: 40 35% 90%;
     --secondary-foreground: 220 15% 18%;
 
     --muted: 40 15% 94%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 38 60% 58%;
+    --accent: 38 65% 55%;
     --accent-foreground: 220 15% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 15% 88%;
+    --border: 40 15% 86%;
     --input: 40 15% 88%;
-    --ring: 215 45% 22%;
+    --ring: 215 55% 24%;
 
     --radius: 0.5rem;
 
@@ -45,17 +45,19 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Custom tokens */
-    --navy: 215 45% 22%;
-    --navy-light: 215 35% 35%;
-    --gold: 38 60% 58%;
-    --gold-light: 38 50% 72%;
-    --cream: 40 20% 97%;
-    --cream-dark: 40 15% 92%;
-    --charcoal: 220 15% 18%;
-    --charcoal-light: 220 10% 35%;
+    /* Custom tokens - richer palette */
+    --navy: 215 55% 24%;
+    --navy-light: 215 40% 38%;
+    --gold: 38 72% 52%;
+    --gold-light: 38 55% 68%;
+    --cream: 40 25% 96%;
+    --cream-dark: 40 18% 90%;
+    --charcoal: 220 18% 16%;
+    --charcoal-light: 220 12% 32%;
     --success: 145 60% 40%;
     --sold: 220 10% 65%;
+    --warm-beige: 35 30% 93%;
+    --soft-blue: 215 30% 95%;
   }
 
   .dark {
@@ -124,6 +126,10 @@
     background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 50%, hsl(var(--gold)) 100%);
   }
 
+  .gradient-band-warm {
+    background: linear-gradient(135deg, hsl(var(--gold) / 0.08) 0%, hsl(var(--cream)) 50%, hsl(var(--soft-blue)) 100%);
+  }
+
   .filter-pill {
     @apply px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer border;
   }
@@ -137,7 +143,16 @@
   }
 
   .premium-bg-soft {
-    background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--cream-dark)) 100%);
+    background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--cream-dark)) 50%, hsl(var(--warm-beige)) 100%);
+  }
+
+  .section-divider {
+    @apply h-1 w-20 mx-auto rounded-full;
+    background: linear-gradient(90deg, hsl(var(--gold)), hsl(var(--navy-light)));
+  }
+
+  .gold-accent-bar {
+    @apply h-1 w-16 rounded-full bg-accent mb-4;
   }
 }
 

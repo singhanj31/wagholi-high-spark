@@ -14,15 +14,15 @@ const OverviewSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
-          <div className="relative rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative rounded-2xl overflow-hidden shadow-xl group">
             <img
               src={gallery2}
               alt="Wagholi High Street Aerial View"
-              className="w-full h-[400px] lg:h-[500px] object-cover"
+              className="w-full h-[400px] lg:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-foreground/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-charcoal/50 to-transparent" />
             <div className="absolute bottom-6 left-6">
-              <span className="px-4 py-2 rounded-full bg-popover/90 backdrop-blur text-sm font-semibold text-foreground">
+              <span className="px-4 py-2 rounded-full bg-gold text-accent-foreground text-sm font-semibold shadow-lg">
                 5.5 Acres Development
               </span>
             </div>
@@ -30,6 +30,7 @@ const OverviewSection = () => {
 
           {/* Content */}
           <div>
+            <div className="gold-accent-bar" />
             <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">
               The Vibrant Hub
             </p>
@@ -46,10 +47,10 @@ const OverviewSection = () => {
               {highlights.map((item) => (
                 <div
                   key={item.label}
-                  className="premium-card p-4 flex items-center gap-3"
+                  className="premium-card p-4 flex items-center gap-3 group/card"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-navy" />
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover/card:bg-gold/15 transition-colors">
+                    <item.icon className="w-5 h-5 text-navy group-hover/card:text-gold transition-colors" />
                   </div>
                   <span className="text-sm font-medium text-foreground">{item.label}</span>
                 </div>

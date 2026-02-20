@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img src={gallery1} alt="Wagholi High Street" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-transparent to-cream/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/30 to-charcoal/70" />
       </div>
 
       {/* Content */}
@@ -17,26 +17,26 @@ const HeroSection = () => {
         <img
           src={whsLogo}
           alt="Wagholi High Street"
-          className="h-20 sm:h-24 w-auto mb-8 animate-fade-in-up drop-shadow-lg"
+          className="h-20 sm:h-24 w-auto mb-8 animate-fade-in-up drop-shadow-xl"
         />
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-popover/80 backdrop-blur-md border border-border/60 mb-8 animate-fade-in-up">
+        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold/20 backdrop-blur-md border border-gold/30 mb-8 animate-fade-in-up">
           <Award className="w-5 h-5 text-gold" />
-          <span className="text-sm font-medium text-foreground tracking-wide">
+          <span className="text-sm font-medium text-popover tracking-wide">
             ★ Voted #1 Business Destination
           </span>
         </div>
 
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-charcoal mb-6 tracking-tight animate-fade-in-up drop-shadow-sm"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-popover mb-6 tracking-tight animate-fade-in-up drop-shadow-lg"
           style={{ animationDelay: "0.2s" }}
         >
           Wins Vote of Confidence
         </h1>
 
         <p
-          className="text-xl sm:text-2xl text-charcoal-light font-body mb-10 animate-fade-in-up"
+          className="text-xl sm:text-2xl text-popover/80 font-body mb-10 animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
         >
           Be Part of This Business Revolution
@@ -48,13 +48,13 @@ const HeroSection = () => {
         >
           <a
             href="#offerings"
-            className="px-8 py-4 rounded-full bg-gold text-accent-foreground font-semibold text-base hover:opacity-90 transition-opacity shadow-lg"
+            className="px-8 py-4 rounded-full bg-gold text-accent-foreground font-semibold text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/30"
           >
             Explore Shops
           </a>
           <a
             href="#enquiry"
-            className="px-8 py-4 rounded-full bg-popover/80 backdrop-blur-md text-foreground border border-border/60 font-semibold text-base hover:bg-popover/95 transition-all"
+            className="px-8 py-4 rounded-full bg-popover/15 backdrop-blur-md text-popover border border-popover/30 font-semibold text-base hover:bg-popover/25 transition-all"
           >
             Book Site Visit
           </a>
@@ -63,8 +63,8 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-charcoal/30 flex items-start justify-center p-1.5">
-          <div className="w-1.5 h-3 rounded-full bg-charcoal/40" />
+        <div className="w-6 h-10 rounded-full border-2 border-popover/40 flex items-start justify-center p-1.5">
+          <div className="w-1.5 h-3 rounded-full bg-popover/50" />
         </div>
       </div>
     </section>

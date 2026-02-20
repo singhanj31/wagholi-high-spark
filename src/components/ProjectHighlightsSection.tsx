@@ -13,10 +13,10 @@ const highlights = [
 const ProjectHighlightsSection = () => {
   return (
     <section className="relative overflow-hidden py-20 lg:py-28">
-      {/* Background with reduced overlay */}
+      {/* Background with less opacity */}
       <div className="absolute inset-0">
         <img src={gallery5} alt="" className="w-full h-full object-cover" aria-hidden="true" />
-        <div className="absolute inset-0 bg-gradient-to-br from-popover/75 via-cream/65 to-popover/78" />
+        <div className="absolute inset-0 bg-gradient-to-br from-cream/65 via-cream/55 to-gold/10" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,6 +27,7 @@ const ProjectHighlightsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
+          <div className="section-divider mb-6" />
           <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">Highlights</p>
           <h2 className="section-heading mb-4">Project Highlights</h2>
           <p className="section-subheading mx-auto">Every detail crafted for commercial excellence.</p>
@@ -41,9 +42,9 @@ const ProjectHighlightsSection = () => {
               viewport={{ once: true, margin: "-30px" }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               whileHover={{ y: -6 }}
-              className="group relative bg-popover/50 backdrop-blur-lg border border-border/50 rounded-2xl p-7 hover:shadow-2xl transition-shadow duration-300"
+              className="group relative bg-popover/70 backdrop-blur-lg border border-border/60 rounded-2xl p-7 hover:shadow-2xl transition-all duration-300"
             >
-              <span className="text-5xl font-heading font-bold text-gold/20 group-hover:text-gold/35 transition-colors duration-300 absolute top-4 right-5 select-none">
+              <span className="text-5xl font-heading font-bold text-gold/25 group-hover:text-gold/45 transition-colors duration-300 absolute top-4 right-5 select-none">
                 {item.num}
               </span>
               <h3 className="text-lg font-heading font-semibold text-foreground mb-2 mt-2 pr-12">{item.title}</h3>
@@ -57,14 +58,14 @@ const ProjectHighlightsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="bg-primary/95 backdrop-blur-lg rounded-2xl p-7 flex flex-col justify-center items-start text-primary-foreground"
+            className="gradient-band rounded-2xl p-7 flex flex-col justify-center items-start text-primary-foreground"
           >
             <h3 className="text-lg font-heading font-semibold mb-3">
               Ready to Secure Your Premium Space?
             </h3>
             <a
               href="#enquiry"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-accent-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-accent-foreground font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg"
             >
               Book a Site Visit <ArrowRight className="w-4 h-4" />
             </a>
