@@ -1,5 +1,5 @@
 import { useState } from "react";
-import gsLogo from "@/assets/gs-group-logo.png";
+import gsLogo from "@/assets/gs-group-logo-new.png";
 import { Phone, Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* GS Group Logo */}
           <a href="#" className="flex-shrink-0">
-            <img src={gsLogo} alt="GS Group" className="h-20 sm:h-24 w-auto" />
+            <img src={gsLogo} alt="GS Group" className="h-24 sm:h-28 w-auto" />
           </a>
 
           {/* Desktop Nav */}
