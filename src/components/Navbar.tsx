@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* GS Group Logo */}
           <a href="#" className="flex-shrink-0">
-            <img src={gsLogo} alt="GS Group" className="h-24 sm:h-28 w-auto" />
+            <img src={gsLogo} alt="GS Group" className="h-28 sm:h-32 w-auto" />
           </a>
 
           {/* Desktop Nav */}
