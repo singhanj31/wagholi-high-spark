@@ -11,12 +11,12 @@ interface Unit {
 }
 
 const units: Unit[] = [
-  { type: "Shops", name: "Retail Shop A-101", size: "250 sq.ft", status: "Available" },
-  { type: "Shops", name: "Retail Shop A-201", size: "300 sq.ft", status: "Available" },
-  { type: "Showrooms", name: "Showroom B-101", size: "500 sq.ft", status: "Sold" },
-  { type: "Showrooms", name: "Showroom B-102", size: "450 sq.ft", status: "Available" },
-  { type: "Offices", name: "Office C-301", size: "350 sq.ft", status: "Available" },
-  { type: "Offices", name: "Office C-302", size: "400 sq.ft", status: "Sold" },
+  { type: "Shops", name: "Retail Shop A", size: "250 sq.ft", status: "Available" },
+  { type: "Shops", name: "Retail Shop B", size: "300 sq.ft", status: "Available" },
+  { type: "Showrooms", name: "Showroom A", size: "500 sq.ft", status: "Sold" },
+  { type: "Showrooms", name: "Showroom B", size: "450 sq.ft", status: "Available" },
+  { type: "Offices", name: "Office A", size: "350 sq.ft", status: "Available" },
+  { type: "Offices", name: "Office B", size: "400 sq.ft", status: "Sold" },
 ];
 
 const filters: UnitType[] = ["All", "Shops", "Showrooms", "Offices"];

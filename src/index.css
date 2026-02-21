@@ -147,8 +147,8 @@
   }
 
   .section-divider {
-    @apply h-1 w-20 mx-auto rounded-full;
-    background: linear-gradient(90deg, hsl(var(--gold)), hsl(var(--navy-light)));
+    @apply h-1.5 w-32 mx-auto rounded-full;
+    background: linear-gradient(90deg, #1a237e 0%, #6a1b9a 20%, #c62828 40%, #e65100 55%, #f9a825 70%, #2e7d32 100%);
   }
 
   .gold-accent-bar {

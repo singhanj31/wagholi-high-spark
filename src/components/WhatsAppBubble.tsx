@@ -1,16 +1,22 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppBubble = () => {
+  const whatsappUrl = `https://web.whatsapp.com/send?phone=918237290784&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`;
+  const mobileUrl = `https://api.whatsapp.com/send?phone=918237290784&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`;
+
+  const handleClick = () => {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    window.open(isMobile ? mobileUrl : whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
-    <a
-      href="https://wa.me/918237290784?text=Hi%2C%20I%20am%20interested%20in%20Wagholi%20High%20Street.%20Please%20share%20more%20details."
-      target="_blank"
-      rel="noopener noreferrer"
+    <button
+      onClick={handleClick}
       className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-success flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
       aria-label="Chat on WhatsApp"
     >
       <MessageCircle className="w-7 h-7 text-popover" />
-    </a>
+    </button>
   );
 };
 

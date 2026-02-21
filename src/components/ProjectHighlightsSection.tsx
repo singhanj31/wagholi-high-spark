@@ -42,13 +42,13 @@ const ProjectHighlightsSection = () => {
               viewport={{ once: true, margin: "-30px" }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               whileHover={{ y: -6 }}
-              className="group relative bg-popover/70 backdrop-blur-lg border border-border/60 rounded-2xl p-7 hover:shadow-2xl transition-all duration-300"
+              className="group relative bg-charcoal/80 backdrop-blur-lg border border-gold/20 rounded-2xl p-7 hover:shadow-2xl transition-all duration-300"
             >
-              <span className="text-5xl font-heading font-bold text-gold/25 group-hover:text-gold/45 transition-colors duration-300 absolute top-4 right-5 select-none">
+              <span className="text-5xl font-heading font-bold text-gold/40 group-hover:text-gold/60 transition-colors duration-300 absolute top-4 right-5 select-none">
                 {item.num}
               </span>
-              <h3 className="text-lg font-heading font-semibold text-foreground mb-2 mt-2 pr-12">{item.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              <h3 className="text-lg font-heading font-semibold text-popover mb-2 mt-2 pr-12">{item.title}</h3>
+              <p className="text-sm text-popover/75 leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
 
