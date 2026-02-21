@@ -15,7 +15,7 @@ const EnquirySection = () => {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nInventory: ${form.inventory}\nMessage: ${form.message.trim()}`
     );
-    window.open(`mailto:singh31anj@gmail.com?subject=${subject}&body=${body}`, "_blank");
+    window.open(`mailto:wagholihighstreet13@gmail.com?subject=${subject}&body=${body}`, "_blank");
   };
 
   return (
@@ -55,8 +55,8 @@ const EnquirySection = () => {
                   e.preventDefault();
                   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
                   const url = isMobile
-                    ? `https://api.whatsapp.com/send?phone=918237290784&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`
-                    : `https://web.whatsapp.com/send?phone=918237290784&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`;
+                    ? `https://api.whatsapp.com/send?phone=917420807577&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`
+                    : `https://web.whatsapp.com/send?phone=917420807577&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`;
                   window.open(url, "_blank", "noopener,noreferrer");
                 }}
                 className="flex items-center gap-4 bg-popover rounded-xl border border-border p-5 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all group"
@@ -66,7 +66,7 @@ const EnquirySection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">WhatsApp</p>
-                  <p className="font-semibold text-foreground">+91 8237290784</p>
+                  <p className="font-semibold text-foreground">+91 7420807577</p>
                 </div>
               </a>
             </div>

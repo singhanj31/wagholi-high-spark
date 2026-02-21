@@ -1,8 +1,8 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppBubble = () => {
-  const whatsappUrl = `https://web.whatsapp.com/send?phone=918237290784&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`;
-  const mobileUrl = `https://api.whatsapp.com/send?phone=918237290784&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`;
+  const whatsappUrl = `https://web.whatsapp.com/send?phone=917420807577&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`;
+  const mobileUrl = `https://api.whatsapp.com/send?phone=917420807577&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`;
 
   const handleClick = () => {
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
