@@ -15,7 +15,7 @@ const EnquirySection = () => {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nInventory: ${form.inventory}\nMessage: ${form.message.trim()}`
     );
-    window.location.href = `mailto:singh31anj@gmail.com?subject=${subject}&body=${body}`;
+    window.open(`mailto:singh31anj@gmail.com?subject=${subject}&body=${body}`, "_blank");
   };
 
   return (
@@ -50,9 +50,15 @@ const EnquirySection = () => {
               </a>
 
               <a
-                href="https://wa.me/918237290784?text=Hi%2C%20I%20am%20interested%20in%20Wagholi%20High%20Street.%20Please%20share%20more%20details."
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+                  const url = isMobile
+                    ? `https://api.whatsapp.com/send?phone=918237290784&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`
+                    : `https://web.whatsapp.com/send?phone=918237290784&text=${encodeURIComponent("Hi, I am interested in Wagholi High Street. Please share more details.")}`;
+                  window.open(url, "_blank", "noopener,noreferrer");
+                }}
                 className="flex items-center gap-4 bg-popover rounded-xl border border-border p-5 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all group"
               >
                 <div className="w-12 h-12 rounded-full bg-success flex items-center justify-center shadow-md">

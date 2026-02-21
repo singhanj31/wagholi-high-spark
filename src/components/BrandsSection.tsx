@@ -10,7 +10,6 @@ const brands = [
 const BrandsSection = () => {
   return (
     <section className="section-padding relative overflow-hidden">
-      {/* Background with accent */}
       <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.04] via-background to-primary/[0.03]" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
@@ -39,16 +38,18 @@ const BrandsSection = () => {
           ))}
         </div>
 
-        {/* Trust bar */}
-        <div className="text-center bg-popover rounded-2xl border border-border py-5 px-6 inline-block mx-auto w-full max-w-md shadow-sm">
-          <div className="flex items-center justify-center gap-1 mb-2">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 fill-gold text-gold" />
-            ))}
+        {/* Trust bar - centered */}
+        <div className="flex justify-center">
+          <div className="text-center bg-popover rounded-2xl border border-border py-5 px-6 max-w-md shadow-sm">
+            <div className="flex items-center justify-center gap-1 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground font-medium">
+              Trusted by leading national brands
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground font-medium">
-            Trusted by leading national brands
-          </p>
         </div>
       </div>
     </section>

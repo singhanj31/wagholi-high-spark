@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Shirt, UtensilsCrossed, Stethoscope, Heart, Dumbbell, Palette, Briefcase } from "lucide-react";
+import { Shirt, UtensilsCrossed, Stethoscope, Heart, Dumbbell, Palette, Briefcase, ChevronDown } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -28,9 +29,10 @@ const colors = [
 ];
 
 const OfferingsSection = () => {
+  const [mainOpen, setMainOpen] = useState(false);
+
   return (
     <section id="offerings" className="section-padding relative overflow-hidden">
-      {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-background to-gold/[0.05]" />
 
       <div className="relative z-10 max-w-4xl mx-auto">
@@ -51,29 +53,46 @@ const OfferingsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <Accordion type="single" collapsible className="space-y-3">
-            {offerings.map((item, i) => (
-              <AccordionItem
-                key={item.title}
-                value={`item-${i}`}
-                className={`bg-gradient-to-r ${colors[i]} bg-popover border border-border/80 rounded-xl overflow-hidden px-6 py-1 shadow-sm hover:shadow-md transition-shadow`}
-              >
-                <AccordionTrigger className="hover:no-underline gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-5 h-5 text-navy" />
-                    </div>
-                    <span className="text-base font-heading font-semibold text-foreground text-left">
-                      {item.title}
-                    </span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pl-[60px] text-muted-foreground leading-relaxed">
-                  {item.desc}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          {/* Main dropdown */}
+          <button
+            onClick={() => setMainOpen(!mainOpen)}
+            className="w-full flex items-center justify-between px-7 py-5 rounded-xl bg-primary text-primary-foreground font-heading font-semibold text-lg shadow-lg hover:opacity-95 transition-opacity mb-4"
+          >
+            <span>Business Opportunities</span>
+            <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${mainOpen ? "rotate-180" : ""}`} />
+          </button>
+
+          {mainOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              transition={{ duration: 0.3 }}
+            >
+              <Accordion type="single" collapsible className="space-y-3">
+                {offerings.map((item, i) => (
+                  <AccordionItem
+                    key={item.title}
+                    value={`item-${i}`}
+                    className={`bg-gradient-to-r ${colors[i]} bg-popover border border-border/80 rounded-xl overflow-hidden px-6 py-1 shadow-sm hover:shadow-md transition-shadow`}
+                  >
+                    <AccordionTrigger className="hover:no-underline gap-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <item.icon className="w-5 h-5 text-navy" />
+                        </div>
+                        <span className="text-base font-heading font-semibold text-foreground text-left">
+                          {item.title}
+                        </span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pl-[60px] text-muted-foreground leading-relaxed">
+                      {item.desc}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </section>

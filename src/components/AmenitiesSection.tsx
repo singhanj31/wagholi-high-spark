@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import gallery4 from "@/assets/gallery-4.jpeg";
-import { Wine, Briefcase, Users, Gamepad2, Coffee, Sparkles } from "lucide-react";
+import { Wine, Briefcase, Gamepad2, Coffee, Sparkles } from "lucide-react";
 
 const amenities = [
   { icon: Wine, title: "Rooftop Lounge", desc: "Sky-high relaxation with panoramic views" },
   { icon: Briefcase, title: "Business Lounge", desc: "Premium meeting & networking spaces" },
-  { icon: Users, title: "Co-working Spaces", desc: "Flexible workspaces for modern professionals" },
   { icon: Gamepad2, title: "Game Zones", desc: "Entertainment & recreation areas" },
   { icon: Coffee, title: "Café & Leisure", desc: "Curated dining and leisure experiences" },
   { icon: Sparkles, title: "Premium Interiors", desc: "World-class finishes throughout" },
