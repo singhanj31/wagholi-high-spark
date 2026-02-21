@@ -1,4 +1,4 @@
-import gsLogo from "@/assets/gs-group-logo.png";
+import gsLogo from "@/assets/gs-group-logo-new.png";
 import whsLogo from "@/assets/whs-logo.webp";
 import { MapPin, Phone, Mail, Globe, ShieldCheck } from "lucide-react";
 
@@ -11,8 +11,8 @@ const Footer = () => (
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-              <img src={gsLogo} alt="GS Group" className="h-20 w-auto brightness-200" />
-              <img src={whsLogo} alt="Wagholi High Street" className="h-16 w-auto brightness-200" />
+              <img src={gsLogo} alt="GS Group" className="h-28 w-auto brightness-200" />
+              <img src={whsLogo} alt="Wagholi High Street" className="h-24 w-auto brightness-200" />
             </div>
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
               Wagholi High Street by GS Group — Pune's premier commercial destination
