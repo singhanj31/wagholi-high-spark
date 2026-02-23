@@ -1,5 +1,5 @@
-import gsLogo from "@/assets/gs-group-logo-footer.jpeg";
-import whsLogo from "@/assets/whs-logo-footer.jpeg";
+import gsLogo from "@/assets/gs-group-logo-footer.png";
+import whsLogo from "@/assets/whs-logo-footer.png";
 import { MapPin, Phone, Mail, Globe, ShieldCheck } from "lucide-react";
 
 const Footer = () => (
