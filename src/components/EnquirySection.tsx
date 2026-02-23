@@ -15,7 +15,7 @@ const EnquirySection = () => {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nInventory: ${form.inventory}\nMessage: ${form.message.trim()}`
     );
-    window.open(`mailto:wagholihighstreet13@gmail.com?subject=${subject}&body=${body}`, "_blank");
+    window.location.href = `mailto:wagholihighstreet12@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
