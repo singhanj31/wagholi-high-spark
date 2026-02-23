@@ -38,8 +38,15 @@ const LocationSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="rounded-2xl overflow-hidden shadow-xl border-2 border-gold/20 h-[400px]"
+            className="rounded-2xl overflow-hidden shadow-xl border-2 border-gold/20 h-[400px] relative group"
           >
+            <a
+              href="https://maps.app.goo.gl/TztiWR7RGvGh9DCKA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 z-10"
+              aria-label="Open Wagholi High Street on Google Maps"
+            />
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1891.0!2d74.017861!3d18.573787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c147b80a6883%3A0xa2c9e1f3b1d4e77f!2sWagholi+High+Street!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
@@ -50,6 +57,16 @@ const LocationSection = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Wagholi High Street Location"
             />
+            {/* Red location pin overlay */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full z-20 pointer-events-none flex flex-col items-center">
+              <div className="relative">
+                <MapPin className="w-10 h-10 text-red-600 drop-shadow-lg" fill="red" strokeWidth={1.5} />
+              </div>
+              <div className="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-red-200 mt-1 whitespace-nowrap">
+                <p className="text-xs font-bold text-red-700">Wagholi High Street</p>
+                <p className="text-[10px] text-gray-600">GS Crown Plaza, Kesnand Rd</p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Connectivity Grid */}

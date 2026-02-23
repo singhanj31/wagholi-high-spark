@@ -16,7 +16,7 @@ const ProjectHighlightsSection = () => {
       {/* Background with less opacity */}
       <div className="absolute inset-0">
         <img src={gallery5} alt="" className="w-full h-full object-cover" aria-hidden="true" />
-        <div className="absolute inset-0 bg-gradient-to-br from-cream/65 via-cream/55 to-gold/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-cream/80 via-cream/70 to-gold/20" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,9 +28,9 @@ const ProjectHighlightsSection = () => {
           className="text-center mb-14"
         >
           <div className="section-divider mb-6" />
-          <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">Highlights</p>
-          <h2 className="section-heading mb-4">Project Highlights</h2>
-          <p className="section-subheading mx-auto">Every detail crafted for commercial excellence.</p>
+          <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3 drop-shadow-md">Highlights</p>
+          <h2 className="section-heading mb-4 text-charcoal drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(255,255,255,0.7)' }}>Project Highlights</h2>
+          <p className="section-subheading mx-auto text-charcoal/90 font-medium" style={{ textShadow: '0 1px 6px rgba(255,255,255,0.8)' }}>Every detail crafted for commercial excellence.</p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
