@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Ruler, IndianRupee, MoveVertical } from "lucide-react";
+import { ArrowRight, Ruler, IndianRupee } from "lucide-react";
 import SectionDivider from "@/components/SectionDivider";
 
 type UnitType = "All" | "Showroom" | "Boutique Showroom" | "Shop" | "Office";
@@ -9,14 +9,13 @@ interface Unit {
   name: string;
   size: string;
   price: string;
-  height?: string;
 }
 
 const units: Unit[] = [
-  { type: "Showroom", name: "Showroom – 330 sq.ft", size: "330 sq.ft", price: "Starting ₹90 Lakh", height: "20 ft Height" },
-  { type: "Showroom", name: "Showroom – 660 sq.ft", size: "660 sq.ft", price: "Starting ₹1.50 Cr", height: "20 ft Height" },
-  { type: "Boutique Showroom", name: "Boutique Showroom – 180 sq.ft", size: "180 sq.ft", price: "Starting ₹50 Lakh", height: "17.5 ft Height" },
-  { type: "Boutique Showroom", name: "Boutique Showroom – 200 sq.ft", size: "200 sq.ft", price: "Starting ₹70 Lakh", height: "17.5 ft Height" },
+  { type: "Showroom", name: "Showroom – 330 sq.ft", size: "330 sq.ft", price: "Starting ₹90 Lakh" },
+  { type: "Showroom", name: "Showroom – 660 sq.ft", size: "660 sq.ft", price: "Starting ₹1.50 Cr" },
+  { type: "Boutique Showroom", name: "Boutique Showroom – 180 sq.ft", size: "180 sq.ft", price: "Starting ₹50 Lakh" },
+  { type: "Boutique Showroom", name: "Boutique Showroom – 200 sq.ft", size: "200 sq.ft", price: "Starting ₹70 Lakh" },
   { type: "Shop", name: "Shop – 250 sq.ft", size: "250 sq.ft", price: "Starting ₹50 Lakh" },
   { type: "Shop", name: "Shop – 500 sq.ft", size: "500 sq.ft", price: "Starting ₹80 Lakh" },
   { type: "Office", name: "Office – 130 sq.ft", size: "130 sq.ft", price: "Starting ₹40 Lakh" },
@@ -74,12 +73,6 @@ const InventorySection = () => {
                   <IndianRupee className="w-4 h-4 text-navy" />
                   <span className="font-semibold text-foreground">{unit.price}</span>
                 </div>
-                {unit.height && (
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MoveVertical className="w-4 h-4 text-navy" />
-                    <span>{unit.height}</span>
-                  </div>
-                )}
               </div>
 
               <a
