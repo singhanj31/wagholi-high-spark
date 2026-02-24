@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import gallery5 from "@/assets/gallery-5.jpeg";
 import { ArrowRight } from "lucide-react";
+import SectionDivider from "@/components/SectionDivider";
 
 const highlights = [
   { num: "01", title: "Premium Retail Shops", desc: "High-footfall ground-floor units with maximum visibility." },
@@ -27,7 +28,7 @@ const ProjectHighlightsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <div className="section-divider mb-6" />
+          <SectionDivider />
           <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3 drop-shadow-md">Highlights</p>
           <h2 className="section-heading mb-4 text-charcoal drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(255,255,255,0.7)' }}>Project Highlights</h2>
           <p className="section-subheading mx-auto text-charcoal/90 font-medium" style={{ textShadow: '0 1px 6px rgba(255,255,255,0.8)' }}>Every detail crafted for commercial excellence.</p>

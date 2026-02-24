@@ -1,6 +1,7 @@
 import mcdonaldsLogo from "@/assets/mcdonalds-logo.png";
 import cineproLogo from "@/assets/cinepro-logo.jpeg";
 import { Star } from "lucide-react";
+import SectionDivider from "@/components/SectionDivider";
 
 const brands = [
   { name: "McDonald's", logo: mcdonaldsLogo, size: "h-20" },
@@ -14,7 +15,7 @@ const BrandsSection = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <div className="text-center mb-14">
-          <div className="section-divider mb-6" />
+          <SectionDivider />
           <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">Trust</p>
           <h2 className="section-heading mb-4">Top Brands Invested With Us</h2>
         </div>

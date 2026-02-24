@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Shirt, UtensilsCrossed, Stethoscope, Heart, Dumbbell, Palette, Briefcase, ChevronDown } from "lucide-react";
+import SectionDivider from "@/components/SectionDivider";
 import {
   Accordion,
   AccordionContent,
@@ -37,7 +38,7 @@ const OfferingsSection = () => {
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-14">
-          <div className="section-divider mb-6" />
+          <SectionDivider />
           <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">
             Commercial Spaces
           </p>
