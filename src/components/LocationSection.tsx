@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Train, Route, Building, Globe } from "lucide-react";
+import SectionDivider from "@/components/SectionDivider";
 
 const connectivityItems = [
   { icon: Train, label: "Metro Extension", desc: "Direct metro connectivity" },
@@ -19,7 +20,7 @@ const LocationSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <div className="section-divider mb-6" />
+          <SectionDivider />
           <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">
             Strategic Location
           </p>

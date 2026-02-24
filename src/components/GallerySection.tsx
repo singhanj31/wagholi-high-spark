@@ -1,4 +1,5 @@
 import gallery1 from "@/assets/gallery-1.jpeg";
+import SectionDivider from "@/components/SectionDivider";
 import gallery2 from "@/assets/gallery-2.jpeg";
 import gallery3 from "@/assets/gallery-3.jpeg";
 import gallery4 from "@/assets/gallery-4.jpeg";
@@ -14,7 +15,7 @@ const GallerySection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <div className="text-center">
-          <div className="section-divider mb-6" />
+          <SectionDivider />
           <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">Visual Tour</p>
           <h2 className="section-heading mb-4">Project Gallery</h2>
         </div>

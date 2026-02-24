@@ -1,25 +1,29 @@
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Ruler, IndianRupee, MoveVertical } from "lucide-react";
+import SectionDivider from "@/components/SectionDivider";
 
-type UnitType = "All" | "Shops" | "Showrooms" | "Offices";
+type UnitType = "All" | "Showroom" | "Boutique Showroom" | "Shop" | "Office";
 
 interface Unit {
-  type: "Shops" | "Showrooms" | "Offices";
+  type: "Showroom" | "Boutique Showroom" | "Shop" | "Office";
   name: string;
   size: string;
-  status: "Available" | "Sold";
+  price: string;
+  height?: string;
 }
 
 const units: Unit[] = [
-  { type: "Shops", name: "Retail Shop A", size: "250 sq.ft", status: "Available" },
-  { type: "Shops", name: "Retail Shop B", size: "300 sq.ft", status: "Available" },
-  { type: "Showrooms", name: "Showroom A", size: "500 sq.ft", status: "Sold" },
-  { type: "Showrooms", name: "Showroom B", size: "450 sq.ft", status: "Available" },
-  { type: "Offices", name: "Office A", size: "350 sq.ft", status: "Available" },
-  { type: "Offices", name: "Office B", size: "400 sq.ft", status: "Sold" },
+  { type: "Showroom", name: "Showroom – 330 sq.ft", size: "330 sq.ft", price: "Starting ₹90 Lakh", height: "20 ft Height" },
+  { type: "Showroom", name: "Showroom – 660 sq.ft", size: "660 sq.ft", price: "Starting ₹1.50 Cr", height: "20 ft Height" },
+  { type: "Boutique Showroom", name: "Boutique Showroom – 180 sq.ft", size: "180 sq.ft", price: "Starting ₹50 Lakh", height: "17.5 ft Height" },
+  { type: "Boutique Showroom", name: "Boutique Showroom – 200 sq.ft", size: "200 sq.ft", price: "Starting ₹70 Lakh", height: "17.5 ft Height" },
+  { type: "Shop", name: "Shop – 250 sq.ft", size: "250 sq.ft", price: "Starting ₹50 Lakh" },
+  { type: "Shop", name: "Shop – 500 sq.ft", size: "500 sq.ft", price: "Starting ₹80 Lakh" },
+  { type: "Office", name: "Office – 130 sq.ft", size: "130 sq.ft", price: "Starting ₹40 Lakh" },
+  { type: "Office", name: "Office – 250 sq.ft", size: "250 sq.ft", price: "Starting ₹50 Lakh" },
 ];
 
-const filters: UnitType[] = ["All", "Shops", "Showrooms", "Offices"];
+const filters: UnitType[] = ["All", "Showroom", "Boutique Showroom", "Shop", "Office"];
 
 const InventorySection = () => {
   const [active, setActive] = useState<UnitType>("All");
@@ -27,15 +31,14 @@ const InventorySection = () => {
 
   return (
     <section id="inventory" className="section-padding relative overflow-hidden">
-      {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-cream-dark/50 via-background to-cream/80" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-10">
-          <div className="section-divider mb-6" />
+          <SectionDivider />
           <p className="text-sm font-semibold tracking-widest text-gold uppercase mb-3">Availability</p>
           <h2 className="section-heading mb-4">Explore Available Spaces</h2>
-          <p className="section-subheading mx-auto">Units ranging from 130 – 386+ sq.ft across all categories.</p>
+          <p className="section-subheading mx-auto">Premium commercial units across all categories with flexible sizing.</p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -50,35 +53,41 @@ const InventorySection = () => {
           ))}
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filtered.map((unit) => (
             <div key={unit.name} className="bg-popover rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 p-6 relative overflow-hidden group">
-              {/* Colored top accent */}
-              <div className={`absolute top-0 left-0 right-0 h-1 ${unit.status === "Available" ? "bg-gradient-to-r from-success to-success/50" : "bg-gradient-to-r from-sold to-sold/50"}`} />
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-success to-success/50" />
 
-              {/* Status badge */}
-              <span
-                className={`absolute top-5 right-4 px-3 py-1 rounded-full text-xs font-semibold ${
-                  unit.status === "Available"
-                    ? "bg-success/15 text-success border border-success/20"
-                    : "bg-muted text-sold"
-                }`}
-              >
-                {unit.status}
+              <span className="absolute top-5 right-4 px-3 py-1 rounded-full text-xs font-semibold bg-success/15 text-success border border-success/20">
+                Available
               </span>
 
               <span className="text-xs font-semibold text-gold uppercase tracking-wider">{unit.type}</span>
-              <h3 className="text-lg font-heading font-semibold text-foreground mt-1 mb-1">{unit.name}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{unit.size}</p>
+              <h3 className="text-lg font-heading font-semibold text-foreground mt-1 mb-3">{unit.name}</h3>
 
-              {unit.status === "Available" && (
-                <a
-                  href="#enquiry"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy hover:text-gold transition-colors"
-                >
-                  Enquire Now <ArrowRight className="w-4 h-4" />
-                </a>
-              )}
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Ruler className="w-4 h-4 text-navy" />
+                  <span>Carpet Area: <strong className="text-foreground">{unit.size}</strong></span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <IndianRupee className="w-4 h-4 text-navy" />
+                  <span className="font-semibold text-foreground">{unit.price}</span>
+                </div>
+                {unit.height && (
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <MoveVertical className="w-4 h-4 text-navy" />
+                    <span>{unit.height}</span>
+                  </div>
+                )}
+              </div>
+
+              <a
+                href="#enquiry"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy hover:text-gold transition-colors"
+              >
+                Enquire Now <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           ))}
         </div>
