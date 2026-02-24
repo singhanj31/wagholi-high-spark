@@ -12,7 +12,7 @@ const Footer = () => (
           <div className="space-y-4">
             <div className="flex items-center gap-6 flex-wrap">
               <img src={gsLogo} alt="GS Group" className="h-20 w-auto rounded-lg" />
-              <img src={whsLogo} alt="Wagholi High Street" className="h-16 w-auto rounded-lg" />
+              <img src={whsLogo} alt="Wagholi High Street" className="h-20 w-auto rounded-lg" />
             </div>
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
               Wagholi High Street by GS Group — Pune's premier commercial destination
