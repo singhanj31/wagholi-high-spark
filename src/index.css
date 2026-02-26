@@ -6,58 +6,58 @@
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 220 15% 18%;
+    --background: 220 15% 10%;
+    --foreground: 40 20% 92%;
 
-    --card: 40 15% 95%;
-    --card-foreground: 220 15% 18%;
+    --card: 220 14% 13%;
+    --card-foreground: 40 18% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 18%;
+    --popover: 220 14% 12%;
+    --popover-foreground: 40 18% 90%;
 
-    --primary: 215 55% 24%;
-    --primary-foreground: 40 20% 97%;
+    --primary: 42 55% 48%;
+    --primary-foreground: 220 15% 8%;
 
-    --secondary: 40 35% 90%;
-    --secondary-foreground: 220 15% 18%;
+    --secondary: 220 12% 18%;
+    --secondary-foreground: 40 18% 85%;
 
-    --muted: 40 15% 94%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 220 12% 16%;
+    --muted-foreground: 40 10% 60%;
 
-    --accent: 38 65% 55%;
-    --accent-foreground: 220 15% 12%;
+    --accent: 42 55% 48%;
+    --accent-foreground: 220 15% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 40 15% 86%;
-    --input: 40 15% 88%;
-    --ring: 215 55% 24%;
+    --border: 42 20% 22%;
+    --input: 220 12% 18%;
+    --ring: 42 55% 48%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 15% 9%;
+    --sidebar-foreground: 40 18% 85%;
+    --sidebar-primary: 42 55% 48%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 12% 15%;
+    --sidebar-accent-foreground: 40 18% 90%;
+    --sidebar-border: 42 15% 20%;
+    --sidebar-ring: 42 55% 48%;
 
-    /* Custom tokens - richer palette */
-    --navy: 215 55% 24%;
-    --navy-light: 215 40% 38%;
-    --gold: 38 72% 52%;
-    --gold-light: 38 55% 68%;
-    --cream: 40 25% 96%;
-    --cream-dark: 40 18% 90%;
-    --charcoal: 220 18% 16%;
-    --charcoal-light: 220 12% 32%;
-    --success: 145 60% 40%;
-    --sold: 220 10% 65%;
-    --warm-beige: 35 30% 93%;
-    --soft-blue: 215 30% 95%;
+    /* Custom tokens - luxury black & gold */
+    --navy: 220 15% 10%;
+    --navy-light: 220 12% 18%;
+    --gold: 42 55% 48%;
+    --gold-light: 42 40% 62%;
+    --cream: 220 14% 13%;
+    --cream-dark: 220 12% 11%;
+    --charcoal: 220 15% 8%;
+    --charcoal-light: 220 10% 25%;
+    --success: 145 50% 42%;
+    --sold: 220 8% 50%;
+    --warm-beige: 220 12% 14%;
+    --soft-blue: 220 14% 15%;
   }
 
   .dark {
