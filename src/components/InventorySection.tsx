@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArrowRight, Ruler, IndianRupee } from "lucide-react";
 import SectionDivider from "@/components/SectionDivider";
 
-type UnitType = "All" | "Showroom" | "Boutique Showroom" | "Shop" | "Office";
+type UnitType = "Showroom" | "Boutique Showroom" | "Shop" | "Office";
 
 interface Unit {
   type: "Showroom" | "Boutique Showroom" | "Shop" | "Office";
@@ -22,11 +22,11 @@ const units: Unit[] = [
   { type: "Office", name: "Office – 250 sq.ft", size: "250 sq.ft", price: "Starting ₹50 Lakh" },
 ];
 
-const filters: UnitType[] = ["All", "Showroom", "Boutique Showroom", "Shop", "Office"];
+const filters: UnitType[] = ["Showroom", "Boutique Showroom", "Shop", "Office"];
 
 const InventorySection = () => {
-  const [active, setActive] = useState<UnitType>("All");
-  const filtered = active === "All" ? units : units.filter((u) => u.type === active);
+  const [active, setActive] = useState<UnitType>("Showroom");
+  const filtered = units.filter((u) => u.type === active);
 
   return (
     <section id="inventory" className="section-padding relative overflow-hidden">
